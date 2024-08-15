@@ -85,6 +85,36 @@ app.delete("/report/:id", (req, res) => {
     res.json(deletedEntry);
 });
 
+// Route to get total income and expenses
+app.get("/report/summary", (req, res) => {
+    const reportEntries = readreportData();
+    
+    // Assuming each entry has a 'type' field to distinguish between income and expenses
+    const totalIncome = reportEntries
+        .filter(entry => entry.type === 'income')
+        .reduce((sum, entry) => sum + entry.amount, 0);
+    
+    const totalExpenses = reportEntries
+        .filter(entry => entry.type === 'expense')
+        .reduce((sum, entry) => sum + entry.amount, 0);
+
+    res.json({ totalIncome, totalExpenses });
+});
+
+// Route to get monthly breakdown
+app.get("/report/monthly", (req, res) => {
+    const reportEntries = readreportData();
+    
+    const monthlyBreakdown = reportEntries.reduce((acc, entry) => {
+        const month = new Date(entry.date).toLocaleString('default', { month: 'short' });
+        acc[month] = (acc[month] || 0) + entry.amount;
+        return acc;
+    }, {});
+
+    res.json(monthlyBreakdown);
+});
+
+
 export default app;
 
 // Start Server

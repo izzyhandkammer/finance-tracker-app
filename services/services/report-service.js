@@ -49,6 +49,33 @@ app.get("/report", (req, res) => {
     res.json(reportEntries);
 });
 
+app.get("/report/monthly", (req, res) => {
+    const reportEntries = readreportData();
+
+    // Helper function to format date to "YYYY-MM"
+    const formatDate = (date) => {
+        const [year, month] = date.split("-");
+        return `${year}-${month}`;
+    };
+
+    // Process entries by month
+    const monthlyData = reportEntries.reduce((acc, entry) => {
+        const month = formatDate(entry.date);
+        if (!acc[month]) {
+            acc[month] = { income: 0, expense: 0 };
+        }
+        if (entry.type === "income") {
+            acc[month].income += entry.amount;
+        } else if (entry.type === "expense") {
+            acc[month].expense += entry.amount;
+        }
+        return acc;
+    }, {});
+
+    res.json(monthlyData);
+});
+
+
 // Route to add a new report entry
 app.post("/report", (req, res) => {
     const { amount, category, date } = req.body;
