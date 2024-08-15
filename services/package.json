@@ -1,0 +1,37 @@
+{
+  "name": "services",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start:income": "node routes/income.js",
+    "start:expense": "node routes/expense.js",
+    "start:budget": "node routes/budget.js",
+    "start:report": "node routes/report.js",
+    "start:allroutes": "concurrently \"npm run start:income\" \"npm run start:expense\" \"npm run start:budget\" \"npm run start:report\"",
+    "start:income-service": "node services/income-service.js",
+    "start:expense-service": "node services/expense-service.js",
+    "start:budget-service": "node services/budget-service.js",
+    "start:report-service": "node services/report-service.js",
+    "start:allservices": "concurrently \"npm run start:income-service\" \"npm run start:expense-service\" \"npm run start:budget-service\" \"npm run start:report-service\"",
+    "start:all": "concurrently \"npm run start:allroutes\" \"npm run start:allservices\"",
+    "kill-ports": "lsof -ti :3001 -o | xargs kill -9; lsof -ti :3002 -o | xargs kill -9; lsof -ti :3003 -o | xargs kill -9; lsof -ti :3004 -o | xargs kill -9"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chart.js": "^4.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "fs": "^0.0.1-security",
+    "morgan": "^1.10.0",
+    "path": "^0.12.7",
+    "svelte-chartjs": "^3.1.5",
+    "winston": "^3.14.1"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

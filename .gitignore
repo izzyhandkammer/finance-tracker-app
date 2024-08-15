@@ -1,21 +1,35 @@
+# Node modules
 node_modules
+.svelte-kit
 
-# Output
-.output
-.vercel
-/.svelte-kit
-/build
+# Logs
+logs/
+*.log
 
-# OS
+# Environment files
+.env
+
+# Docker files
+*.dockerfile
+docker-compose.override.yml
+
+# Build output
+dist/
+build/
+logs/
+
+# IDE/editor settings
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# OS-specific files
 .DS_Store
 Thumbs.db
 
-# Env
-.env
-.env.*
-!.env.example
-!.env.test
-
-# Vite
-vite.config.js.timestamp-*
-vite.config.ts.timestamp-*
+# Other files to ignore
+*.swp
+*.swo

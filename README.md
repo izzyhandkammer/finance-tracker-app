@@ -1,38 +1,50 @@
-# create-svelte
+# finance-app-tracker
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
+This is a finance app tracker project for cs426 at UMass that consists of two main directories: `finance-tracker-app` and `services`.
 
-## Creating a project
+## Running the Svelte App
 
-If you're seeing this, you've probably already done this step. Congrats!
+To run the Svelte app located in the `finance-tracker-app` directory, follow these steps:
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+1. Open a terminal and navigate to the `finance-tracker-app` directory.
+2. Run the following command to install the dependencies:
+    ```
+    npm install
+    ```
+3. Once the installation is complete, start the development server by running:
+    ```
+    npm run dev
+    ```
+4. The Svelte app should now be running on your local machine. Open your web browser and visit `http://localhost:5000` to access the app.
 
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+## Running the Services
 
-## Developing
+To run the services located in the `services` directory, follow these steps:
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+1. Open a terminal and navigate to the `services` directory.
+2. Run the following command to install the dependencies:
+    ```
+    npm install
+    ```
+3. Once the installation is complete, start the services by running:
+    ```
+    npm start
+    ```
+4. The services should now be running on your local machine.
 
-```bash
-npm run dev
+## ToDo
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+- integrate databases with the service files
 
-## Building
+## Front-End Structure
 
-To create a production version of your app:
+### 
 
-```bash
-npm run build
-```
+## Known Issues
 
-You can preview the production build with `npm run preview`.
+### Major
+- Git outage is a problem
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+### Minor
+- Currently, there is a minor issue runnning the script in services/package.json. 
+When running start:allroutes there is no error but start:all displays an error that the ports defined in routes are in use. This does not interfere with functionality and logs are created showing that the apps launched fine.
