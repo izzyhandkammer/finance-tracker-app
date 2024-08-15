@@ -1,1 +1,26 @@
-[]
+[
+  {
+    "id": 1,
+    "amount": 10,
+    "category": "food",
+    "date": "2024-08-15"
+  },
+  {
+    "id": 2,
+    "amount": 900,
+    "category": "car payment",
+    "date": "2024-08-14"
+  },
+  {
+    "id": 3,
+    "amount": 10,
+    "category": "ticket",
+    "date": "2024-08-07"
+  },
+  {
+    "id": 4,
+    "amount": 1,
+    "category": "lost a dollar",
+    "date": "2024-08-15"
+  }
+]

@@ -1,1 +1,26 @@
-[]
+[
+  {
+    "id": 1,
+    "amount": 1000,
+    "category": "wages",
+    "date": "2024-08-15"
+  },
+  {
+    "id": 2,
+    "amount": 200,
+    "category": "tips",
+    "date": "2024-08-15"
+  },
+  {
+    "id": 3,
+    "amount": 100,
+    "category": "tips",
+    "date": "1000-10-10"
+  },
+  {
+    "id": 4,
+    "amount": 1,
+    "category": "found a dollar",
+    "date": "2024-08-15"
+  }
+]
