@@ -28,7 +28,7 @@
                   label += ': ';
                 }
                 if (context.parsed !== null) {
-                  label += `${context.parsed}%`;
+                  label += `$ ${context.parsed}`;
                 }
                 return label;
               }

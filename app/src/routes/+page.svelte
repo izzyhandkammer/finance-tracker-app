@@ -46,18 +46,63 @@
 </script>
 
 <main>
-    <h1>Finance Tracker</h1>
-    <BudgetList />
-    <IncomeForm />
-    <IncomeList />
-    <ExpenseForm />
-    <ExpenseList />
-    <h1>Budget Breakdown:</h1>
-    <PieChart data={$pieData} />
-    <MonthlyReport />
-    <ReportSummary />
+    <div class="cols">
+        <div class="left">
+            <div class="box">
+                <h1>Income Tracker</h1>
+                <BudgetList />
+                <IncomeForm />
+                <IncomeList />
+            </div>
+            <div class="box">
+                <h1>Expense Tracker</h1>
+                <ExpenseForm />
+                <ExpenseList />
+            </div>
+        </div>
+        <div class="right">
+            <div class="box">
+                <h1>Budget Breakdown</h1>
+                <PieChart data={$pieData} />
+            </div>
+        </div>
+        <div class="box monthly-report">
+            <MonthlyReport />
+            <ReportSummary />
+        </div>
+    </div>
 </main>
 
 <style>
-    /* Add any styles you want here */
+    * {
+        font-family: Helvetica, sans-serif;
+    }
+    .box {
+        background: rgba(162, 242, 243, 0.32);
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(6.2px);
+        -webkit-backdrop-filter: blur(6.2px);
+        border: 1px solid rgba(162, 242, 243, 0.63);
+        padding: 10px;
+        margin: 10px;
+    }
+    .left {
+        display: flex;
+        flex-direction: column;
+    }
+    .right {
+        display: flex;
+        flex-direction: column;
+    }
+    .cols {
+        display: flex;
+        flex-direction: row;
+    }
+    .monthly-report {
+        width: 20%;
+    }
+    .budget-breakdown {
+        
+    }
 </style>
