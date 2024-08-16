@@ -7,6 +7,7 @@
 
   let successMessage = "";
   let errorMessage = "";
+  let warningMessage = "";
 
   async function submitExpense() {
       try {
@@ -68,11 +69,18 @@
     <p class="error">{errorMessage}</p>
 {/if}
 
+{#if warningMessage}
+    <p class="warning">{warningMessage}</p>
+{/if}
+
 <style>
     .success {
         color: green;
     }
     .error {
         color: red;
+    }
+    .warning {
+        color: orange;
     }
 </style>

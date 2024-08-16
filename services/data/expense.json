@@ -22,5 +22,17 @@
     "amount": 1,
     "category": "lost a dollar",
     "date": "2024-08-15"
+  },
+  {
+    "id": 5,
+    "amount": 5,
+    "category": "scratch offs",
+    "date": "2024-08-16"
+  },
+  {
+    "id": 6,
+    "amount": 10,
+    "category": "more scratch offs",
+    "date": "2024-08-16"
   }
 ]

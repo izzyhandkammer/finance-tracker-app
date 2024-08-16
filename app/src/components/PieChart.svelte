@@ -1,5 +1,5 @@
 <script>
-  export let data = {};  // Expect data to be passed as a prop
+  export let data = {};
   import { onDestroy, onMount } from 'svelte';
   import { Chart, registerables } from 'chart.js';
 

@@ -9,6 +9,7 @@
     import PieChart from "../components/PieChart.svelte";
     import MonthlyReport from "../components/MonthlyReport.svelte";
     import ReportSummary from "../components/ReportSummary.svelte";
+    import ThresholdForm from "../components/ThresholdForm.svelte";
 
     import { derived } from "svelte/store";
 
@@ -20,17 +21,6 @@
         const disposableIncome =
             $budgetStore.income.reduce((sum, inc) => sum + inc.amount, 0) -
             totalExpenses;
-
-        console.log("Pie Data:", {
-            labels: ["Disposable Income", "Expenses"],
-            datasets: [
-                {
-                    label: "Budget Breakdown",
-                    data: [disposableIncome, totalExpenses],
-                    backgroundColor: ["#36A2EB", "#FF6384"],
-                },
-            ],
-        });
 
         return {
             labels: ["Disposable Income", "Expenses"],
@@ -50,12 +40,14 @@
         <div class="left">
             <div class="box">
                 <h1>Income Tracker</h1>
+                
                 <BudgetList />
                 <IncomeForm />
                 <IncomeList />
             </div>
             <div class="box">
                 <h1>Expense Tracker</h1>
+                <ThresholdForm />
                 <ExpenseForm />
                 <ExpenseList />
             </div>
@@ -76,6 +68,7 @@
 <style>
     * {
         font-family: Helvetica, sans-serif;
+        background-color: aliceblue;
     }
     .box {
         background: rgba(162, 242, 243, 0.32);
@@ -101,8 +94,5 @@
     }
     .monthly-report {
         width: 20%;
-    }
-    .budget-breakdown {
-        
     }
 </style>
