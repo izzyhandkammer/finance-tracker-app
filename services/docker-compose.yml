@@ -1,0 +1,48 @@
+# services/docker-compose.yml
+
+version: '3.8'
+
+services:
+  budget-service:
+    build:
+      context: ./budget
+    ports:
+      - "4001:4001"
+    volumes:
+      - ./budget/data:/usr/src/app/data
+    networks:
+      - finance-network
+
+  income-service:
+    build:
+      context: ./income
+    ports:
+      - "4002:4002"
+    volumes:
+      - ./income/data:/usr/src/app/data
+    networks:
+      - finance-network
+
+  expense-service:
+    build:
+      context: ./expense
+    ports:
+      - "4003:4003"
+    volumes:
+      - ./expense/data:/usr/src/app/data
+    networks:
+      - finance-network
+
+  report-service:
+    build:
+      context: ./report
+    ports:
+      - "4004:4004"
+    volumes:
+      - ./report/data:/usr/src/app/data
+    networks:
+      - finance-network
+
+networks:
+  finance-network:
+    driver: bridge
